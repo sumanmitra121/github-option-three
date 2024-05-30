@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18.19.1
+          node-version: 16
 
       - name: Build Angular app to prod
         working-directory: github-option-three-app
@@ -24,6 +24,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: github-option-three-app/dist/browser
+          folder: github-option-three-app/dist/
           branch: prod  
           token: ${{ secrets.GH_TOKEN }}
